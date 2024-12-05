@@ -1,0 +1,30 @@
+<form [formGroup]="producerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="producerForm.get('name')?.invalid && (producerForm.get('name')?.dirty || producerForm.get('name')?.touched)">
+      <div *ngIf="producerForm.get('name')?.errors?.['required']">
+        Name is required.
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="country">Country:</label>
+    <input type="text" id="country" formControlName="country">
+    <div *ngIf="producerForm.get('country')?.invalid && (producerForm.get('country')?.dirty || producerForm.get('country')?.touched)">
+      <div *ngIf="producerForm.get('country')?.errors?.['required']">
+        Country is required.
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="foundedDate">Founded Date:</label>
+    <input type="date" id="foundedDate" formControlName="foundedDate">
+    <div *ngIf="producerForm.get('foundedDate')?.invalid && (producerForm.get('foundedDate')?.dirty || producerForm.get('foundedDate')?.touched)">
+      <div *ngIf="producerForm.get('foundedDate')?.errors?.['required']">
+        Founded Date is required.
+      </div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="producerForm.invalid">Add Producer</button>
+</form>

@@ -1,0 +1,27 @@
+<p>producer-list works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Founded Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producer of producers">
+      <td>{{ producer.name }}</td>
+      <td>{{ producer.country }}</td>
+      <td>{{ producer.foundedDate | date: 'shortDate' }}</td>
+      <td>
+        <button (click)="deleteProducer(producer.id)">Delete</button>
+        <a [routerLink]="['/producers/edit', producer.id]">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<a routerLink="/producers/add">Add Producer</a>
+
+

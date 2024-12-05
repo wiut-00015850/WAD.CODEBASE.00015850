@@ -1,0 +1,5 @@
+﻿@SparePartsInventory.00015850_HostAddress = https://localhost:7288
+
+GET {{SparePartsInventory.00015850_HostAddress}}/weatherforecast
+
+###

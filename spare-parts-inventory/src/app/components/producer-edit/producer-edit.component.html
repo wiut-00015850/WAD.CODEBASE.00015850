@@ -1,0 +1,14 @@
+<form (ngSubmit)="saveProducer()">
+  <div *ngIf="producer">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="producer.name"><br><br>
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" [(ngModel)]="producer.country"><br><br>
+    <label for="foundedDate">Founded Date:</label>
+    <input type="date" id="foundedDate" name="foundedDate" [(ngModel)]="producer.foundedDate"><br><br>
+    <input type="submit" value="Save">
+  </div>
+  <div *ngIf="!producer">
+    <p>Producer not found.</p>
+  </div>
+</form>
